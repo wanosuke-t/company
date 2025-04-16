@@ -25,7 +25,7 @@ body {
 }
 @media not screen and (min-width: 768px) {
   .inner {
-    padding-inline: 16px;
+    padding-inline: 32px;
   }
 }
 
@@ -89,6 +89,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media not screen and (min-width: 768px) {
+  .header__inner {
+    padding-inline: 16px;
+  }
 }
 
 .header__logo {
@@ -301,11 +306,6 @@ body {
           flex-direction: column;
   gap: 20px;
 }
-@media not screen and (min-width: 768px) {
-  .news__list {
-    padding-inline: 16px;
-  }
-}
 
 .news__article {
   display: -webkit-box;
@@ -401,4 +401,112 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0;
+}
+
+.price {
+  padding-block: 100px 120px;
+  background: #efefef;
+}
+@media not screen and (min-width: 768px) {
+  .price {
+    padding-block: 60px 80px;
+  }
+}
+
+.price__content {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+@media not screen and (min-width: 768px) {
+  .price__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.price__info {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 58.8333333333%;
+}
+@media not screen and (min-width: 768px) {
+  .price__info {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .price__info {
+    width: 58.1395348837%;
+  }
+}
+
+.price__table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.price__table th,
+.price__table td {
+  border: 1px solid #707070;
+  vertical-align: middle;
+  font-weight: 700;
+  padding: 12.65px 20px;
+}
+@media not screen and (min-width: 768px) {
+  .price__table th,
+  .price__table td {
+    font-size: 14px;
+    padding: 12px 6px;
+  }
+}
+.price__table th:first-child,
+.price__table td:first-child {
+  width: 30%;
+}
+@media not screen and (min-width: 768px) {
+  .price__table th:first-child,
+  .price__table td:first-child {
+    width: 20%;
+  }
+}
+.price__table th:nth-child(2), .price__table th:nth-child(3),
+.price__table td:nth-child(2),
+.price__table td:nth-child(3) {
+  width: 35%;
+}
+@media not screen and (min-width: 768px) {
+  .price__table th:nth-child(2), .price__table th:nth-child(3),
+  .price__table td:nth-child(2),
+  .price__table td:nth-child(3) {
+    width: 40%;
+  }
+}
+.price__table th span,
+.price__table td span {
+  color: #e81919;
+  font-weight: inherit;
+}
+.price__table th {
+  background: #999999;
+  color: #ffffff;
+}
+.price__table td {
+  background: #ffffff;
+  text-align: right;
+}
+
+.price__note {
+  margin-top: 12px;
+}
+.price__note a {
+  font-weight: 700;
+  text-decoration: underline;
 }

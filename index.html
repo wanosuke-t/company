@@ -17,8 +17,8 @@
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__item"><a href="#card" class="is-active">Card</a></li>
-          <li class="header__item"><a href="">News</a></li>
-          <li class="header__item"><a href="">Price</a></li>
+          <li class="header__item"><a href="#news">News</a></li>
+          <li class="header__item"><a href="#price">Price</a></li>
           <li class="header__item"><a href="">Access</a></li>
           <li class="header__item"><a href="">Contact</a></li>
         </ul>
@@ -84,7 +84,7 @@
     </div>
   </section>
 
-  <section class="news">
+  <section class="news" id="news">
     <div class="news__inner inner">
       <div class="news__head head">News</div>
       <ul class="news__list">
@@ -145,7 +145,50 @@
   </section>
 
 
-  
+  <section class="price" id="price">
+    <div class="price__inner inner">
+      <div class="price__head head">Price</div>
+      <div class="price__content">
+        <div class="price__image">
+          <img src="./img/price-img.png" alt="" width="454" height="286">
+        </div>
+        <div class="price__info">
+          <table class="price__table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>column1</th>
+                <th>column2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>row1</th>
+                <td>100円</td>
+                <td>100円</td>
+              </tr>
+              <tr>
+                <th>row2</th>
+                <td>6,000円</td>
+                <td>0円</td>
+              </tr>
+              <tr>
+                <th>row3</th>
+                <td><span>6,000円</span><br>※今だけ半額</td>
+                <td>0円</td>
+              </tr>
+              <tr>
+                <th>row4</th>
+                <td>100円</td>
+                <td>100円</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="price__note">※目安なので詳しくは<a href="">お問い合わせ</a>ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 

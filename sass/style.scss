@@ -47,7 +47,7 @@ body {
   margin: 0 auto;
 
   @include mq(sp) {
-    padding-inline: 16px;
+    padding-inline: 32px;
   }
 }
 
@@ -101,6 +101,10 @@ body {
 .header__inner {
   display: flex;
   justify-content: space-between;
+
+  @include mq(sp) {
+    padding-inline: 16px;
+  }
 }
 
 .header__logo {
@@ -290,6 +294,7 @@ body {
   }
 }
 
+// news
 .news {
   padding-block: 100px 120px;
 
@@ -312,10 +317,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  @include mq(sp) {
-    padding-inline: 16px;
-  }
 }
 
 .news__article {
@@ -395,5 +396,117 @@ body {
       transform: translateY(-50%);
       right: 0;
     }
+  }
+}
+
+// price
+.price {
+  padding-block: 100px 120px;
+  background: #efefef;
+
+  @include mq(sp) {
+    padding-block: 60px 80px;
+  }
+}
+
+.price__head {
+}
+
+.price__inner {
+}
+
+.price__content {
+  margin-top: 80px;
+  display: flex;
+  gap: 40px;
+
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.price__image {
+  // @include mq(sp) {
+  //   width: 100%;
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
+}
+
+.price__info {
+  flex-shrink: 0;
+  width: calc(706px / 1200px * 100%);
+
+  @include mq(sp) {
+    width: 100%;
+  }
+
+  @include mq(tb) {
+    width: calc(400px / 688px * 100%);
+  }
+}
+
+.price__table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+
+  tr {
+  }
+
+  th,
+  td {
+    border: 1px solid #707070;
+    vertical-align: middle;
+    font-weight: 700;
+    padding: 12.65px 20px;
+
+    @include mq(sp) {
+      font-size: 14px;
+      padding: 12px 6px;
+    }
+
+    &:first-child {
+      width: 30%;
+
+      @include mq(sp) {
+        width: 20%;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      width: 35%;
+
+      @include mq(sp) {
+        width: 40%;
+      }
+    }
+
+    span {
+      color: $color-accent;
+      font-weight: inherit;
+    }
+  }
+
+  th {
+    background: #999999;
+    color: #ffffff;
+  }
+
+  td {
+    background: #ffffff;
+    text-align: right;
+  }
+}
+
+.price__note {
+  margin-top: 12px;
+
+  a {
+    font-weight: 700;
+    text-decoration: underline;
   }
 }
