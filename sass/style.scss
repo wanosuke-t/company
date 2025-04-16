@@ -1,0 +1,291 @@
+// 変数
+$color-main: #3f51b5;
+$color-accent: #e81919;
+$color-text: #333;
+
+$layout-width-inner: 1200px;
+
+// ブレイクポイント
+@use "sass:map";
+
+$breakpoints: (
+  sp: "not screen and (min-width: 768px)",
+  tb: "screen and (min-width: 768px) and (max-width: #{$layout-width-inner})",
+  pc: "screen and (min-width: #{$layout-width-inner})",
+) !default;
+
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// base
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+
+  @include mq(sp) {
+    scroll-padding-top: 60px;
+  }
+}
+
+body {
+  color: $color-text;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+}
+
+// 共通
+.inner {
+  padding-inline: 40px;
+  width: calc($layout-width-inner + 40px * 2);
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include mq(sp) {
+    padding-inline: 16px;
+  }
+}
+
+.head {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 14px;
+  position: relative;
+
+  @include mq(sp) {
+    font-size: 32px;
+    padding-bottom: 8px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: $color-main;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.inline-block {
+  display: inline-block;
+  font-weight: inherit;
+}
+
+// header
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background: $color-main;
+  box-shadow: 0px 3px 3px #00000029;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+
+  @include mq(sp) {
+    height: 60px;
+  }
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 205px;
+
+  @include mq(sp) {
+    width: 182px;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header__item {
+  a {
+    display: inline-block;
+    color: #ffffff;
+    position: relative;
+
+    &.is-active {
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 3px);
+        height: 2px;
+        background: $color-accent;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+// mv
+.mv {
+  width: 100%;
+  background: url("../img/mainvisual.png") no-repeat center center / cover;
+  margin-top: 100px;
+  padding-block: 184px;
+
+  @include mq(sp) {
+    margin-top: 60px;
+    padding-block: 120px;
+  }
+}
+
+.mv__content {
+  text-align: center;
+  padding-inline: 16px;
+}
+
+.mv__title {
+  font-size: 64px;
+  font-weight: 700;
+
+  @include mq(sp) {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+}
+
+.mv__lead {
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 700;
+
+  @include mq(sp) {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+}
+
+.mv__button {
+  margin-top: 40px;
+
+  @include mq(sp) {
+    margin-top: 36px;
+  }
+
+  a {
+    display: inline-block;
+    padding-block: 24px;
+    width: 384px;
+    max-width: 100%;
+    color: #ffffff;
+    background-color: $color-main;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 8px;
+
+    @include mq(sp) {
+      padding-block: 16px;
+      width: 240px;
+      font-size: 18px;
+    }
+  }
+}
+
+// card
+.card {
+  padding-block: 100px 120px;
+  background: #efefef;
+
+  @include mq(sp) {
+    padding-block: 60px 80px;
+  }
+}
+
+.card__inner {
+}
+
+.card__head {
+}
+
+.card__list {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @include mq(sp) {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    width: 360px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  @include mq(tb) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 750px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+.card__item {
+  a {
+    display: block;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+}
+
+.card__image {
+  img {
+  }
+}
+
+.card__title {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6f7579;
+
+  @include mq(sp) {
+    font-size: 18px;
+  }
+}
+
+.card__lead {
+  margin-top: 4px;
+  font-weight: 700;
+  color: #6f7579;
+
+  @include mq(sp) {
+    font-size: 14px;
+  }
+}
