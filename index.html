@@ -19,8 +19,8 @@
           <li class="header__item"><a href="#card" class="is-active">Card</a></li>
           <li class="header__item"><a href="#news">News</a></li>
           <li class="header__item"><a href="#price">Price</a></li>
-          <li class="header__item"><a href="">Access</a></li>
-          <li class="header__item"><a href="">Contact</a></li>
+          <li class="header__item"><a href="#access">Access</a></li>
+          <li class="header__item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -189,6 +189,128 @@
       </div>
     </div>
   </section>
+
+  <section class="access section" id="access">
+    <div class="access__inner inner">
+      <div class="access__head head">Access</div>
+      <div class="access__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.496480092997!2d139.4860018760785!3d35.76317887256101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e72889e4ffc9%3A0x9cf1b8d42d5821fa!2z44G744GS!5e0!3m2!1sja!2sjp!4v1744853075116!5m2!1sja!2sjp"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <dl class="access__info">
+        <div>
+          <dt>住所</dt>
+          <dd>ほげほげほげのほげの場所</dd>
+        </div>
+        <div>
+          <dt>アクセス</dt>
+          <dd>〇〇駅から右に５分</dd>
+        </div>
+      </dl>
+      <div class="access__button">
+        <a target="_blank" href="https://maps.app.goo.gl/BmzRrYuav2UYjFLX8">Googleマップで見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section section--gray" id="#contact">
+    <div class="contact__inner inner">
+      <div class="contact__head head">Contact</div>
+      <div class="contact__box">
+
+        <form class="form">
+
+          <div class="form__fields">
+
+            <div class="form__field">
+              <div class="form__head">
+                <label for="your-name" class="form__label">お名前</label>
+                <span class="form__tag">必須</span>
+              </div>
+              <div class="form__item">
+                <input class="form__text" type="text" name="your-name" id="your-name" placeholder="山田　太郎" />
+              </div>
+            </div>
+
+            <div class="form__field">
+              <div class="form__head">
+                <label for="your-email" class="form__label">メールアドレス</label>
+                <span class="form__tag">必須</span>
+              </div>
+              <div class="form__item">
+                <input class="form__text" type="email" name="your-email" id="your-email"
+                  placeholder="text@example.com" />
+              </div>
+            </div>
+
+            <div class="form__field">
+              <div class="form__head">
+                <label for="contact-type" class="form__label">お問い合わせ種別</label>
+              </div>
+              <div class="form__item">
+                <select name="contact-type" id="contact-type" class="form__select">
+                  <option value="">−−−</option>
+                  <option value="">アプリの質問</option>
+                  <option value="">取材の依頼</option>
+                  <option value="">その他</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__field">
+              <div class="form__head">
+                <label for="your-message" class="form__label">お問い合わせ内容</label>
+              </div>
+              <div class="form__item">
+                <textarea class="form__textarea" name="your-message" id="your-message"
+                  placeholder="お問い合わせを入力してください"></textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form__radios">
+            <label class="form__radio">
+              <input class="form__radio-input" type="radio" name="your-name" />
+              <span class="form__radio-text">ラジオ１</span>
+            </label>
+            <label class="form__radio">
+              <input class="form__radio-input" type="radio" name="your-name" />
+              <span class="form__radio-text">ラジオ２</span>
+            </label>
+            <label class="form__radio">
+              <input class="form__radio-input" type="radio" name="your-name" />
+              <span class="form__radio-text">ラジオ３</span>
+            </label>
+          </div>
+
+          <div class="form__privacy">
+            <label class="form__checkbox">
+              <input class="form__checkbox-input" type="checkbox" name="your-privacy" id="your-privacy" />
+              <span class="form__checkbox-text"><a target="_blank" href="">プライバシーポリシー</a><span class="inline-block">に合意する</span></span>
+            </label>
+          </div>
+
+          <div class="form__button">
+            <div class="form__button-wrapper">
+              <input type="submit" value="送信する" />
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    
+  </div>
+</footer>
 
 </body>
 
