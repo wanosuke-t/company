@@ -40,6 +40,19 @@ body {
 }
 
 // 共通
+.section {
+  padding-block: 100px 120px;
+  background: #fff;
+
+  @include mq(sp) {
+    padding-block: 60px 80px;
+  }
+
+  &--gray {
+    background: #efefef;
+  }
+}
+
 .inner {
   padding-inline: 40px;
   width: calc($layout-width-inner + 40px * 2);
@@ -223,12 +236,6 @@ body {
 
 // card
 .card {
-  padding-block: 100px 120px;
-  background: #efefef;
-
-  @include mq(sp) {
-    padding-block: 60px 80px;
-  }
 }
 
 .card__inner {
@@ -296,11 +303,6 @@ body {
 
 // news
 .news {
-  padding-block: 100px 120px;
-
-  @include mq(sp) {
-    padding-block: 60px 80px;
-  }
 }
 
 .news__inner {
@@ -317,6 +319,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @include mq(sp) {
+    margin-top: 40px;
+  }
 }
 
 .news__article {
@@ -401,12 +407,6 @@ body {
 
 // price
 .price {
-  padding-block: 100px 120px;
-  background: #efefef;
-
-  @include mq(sp) {
-    padding-block: 60px 80px;
-  }
 }
 
 .price__head {
@@ -421,18 +421,20 @@ body {
   gap: 40px;
 
   @include mq(sp) {
+    margin-top: 40px;
     flex-direction: column;
     align-items: center;
   }
 }
 
 .price__image {
-  // @include mq(sp) {
-  //   width: 100%;
-  //   img {
-  //     width: 100%;
-  //   }
-  // }
+  @include mq(sp) {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .price__info {
@@ -441,10 +443,6 @@ body {
 
   @include mq(sp) {
     width: 100%;
-  }
-
-  @include mq(tb) {
-    width: calc(400px / 688px * 100%);
   }
 }
 
@@ -461,33 +459,21 @@ body {
     border: 1px solid #707070;
     vertical-align: middle;
     font-weight: 700;
-    padding: 12.65px 20px;
+    line-height: calc(22 / 16);
+    padding-inline: 24px;
+    height: 57px;
 
     @include mq(sp) {
-      font-size: 14px;
-      padding: 12px 6px;
+      padding-inline: 8px;
     }
 
     &:first-child {
-      width: 30%;
-
-      @include mq(sp) {
-        width: 20%;
-      }
+      width: calc(170px / 706px * 100%);
     }
 
     &:nth-child(2),
     &:nth-child(3) {
-      width: 35%;
-
-      @include mq(sp) {
-        width: 40%;
-      }
-    }
-
-    span {
-      color: $color-accent;
-      font-weight: inherit;
+      // width: calc(266px / 706px * 100%);
     }
   }
 
@@ -499,6 +485,18 @@ body {
   td {
     background: #ffffff;
     text-align: right;
+  }
+
+  strong {
+    display: block;
+    color: $color-accent;
+    font-weight: inherit;
+  }
+
+  span {
+    display: block;
+    font-size: 13px;
+    font-weight: inherit;
   }
 }
 

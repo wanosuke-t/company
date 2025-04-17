@@ -17,6 +17,19 @@ body {
   background: #fff;
 }
 
+.section {
+  padding-block: 100px 120px;
+  background: #fff;
+}
+@media not screen and (min-width: 768px) {
+  .section {
+    padding-block: 60px 80px;
+  }
+}
+.section--gray {
+  background: #efefef;
+}
+
 .inner {
   padding-inline: 40px;
   width: 1280px;
@@ -219,16 +232,6 @@ body {
   }
 }
 
-.card {
-  padding-block: 100px 120px;
-  background: #efefef;
-}
-@media not screen and (min-width: 768px) {
-  .card {
-    padding-block: 60px 80px;
-  }
-}
-
 .card__list {
   margin-top: 80px;
   display: grid;
@@ -283,15 +286,6 @@ body {
   }
 }
 
-.news {
-  padding-block: 100px 120px;
-}
-@media not screen and (min-width: 768px) {
-  .news {
-    padding-block: 60px 80px;
-  }
-}
-
 .news__list {
   margin-top: 80px;
   width: 800px;
@@ -305,6 +299,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+}
+@media not screen and (min-width: 768px) {
+  .news__list {
+    margin-top: 40px;
+  }
 }
 
 .news__article {
@@ -403,16 +402,6 @@ body {
   right: 0;
 }
 
-.price {
-  padding-block: 100px 120px;
-  background: #efefef;
-}
-@media not screen and (min-width: 768px) {
-  .price {
-    padding-block: 60px 80px;
-  }
-}
-
 .price__content {
   margin-top: 80px;
   display: -webkit-box;
@@ -422,6 +411,7 @@ body {
 }
 @media not screen and (min-width: 768px) {
   .price__content {
+    margin-top: 40px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -429,6 +419,15 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media not screen and (min-width: 768px) {
+  .price__image {
+    width: 100%;
+  }
+  .price__image img {
+    width: 100%;
   }
 }
 
@@ -442,11 +441,6 @@ body {
     width: 100%;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .price__info {
-    width: 58.1395348837%;
-  }
-}
 
 .price__table {
   border-collapse: collapse;
@@ -458,41 +452,19 @@ body {
   border: 1px solid #707070;
   vertical-align: middle;
   font-weight: 700;
-  padding: 12.65px 20px;
+  line-height: 1.375;
+  padding-inline: 24px;
+  height: 57px;
 }
 @media not screen and (min-width: 768px) {
   .price__table th,
   .price__table td {
-    font-size: 14px;
-    padding: 12px 6px;
+    padding-inline: 8px;
   }
 }
 .price__table th:first-child,
 .price__table td:first-child {
-  width: 30%;
-}
-@media not screen and (min-width: 768px) {
-  .price__table th:first-child,
-  .price__table td:first-child {
-    width: 20%;
-  }
-}
-.price__table th:nth-child(2), .price__table th:nth-child(3),
-.price__table td:nth-child(2),
-.price__table td:nth-child(3) {
-  width: 35%;
-}
-@media not screen and (min-width: 768px) {
-  .price__table th:nth-child(2), .price__table th:nth-child(3),
-  .price__table td:nth-child(2),
-  .price__table td:nth-child(3) {
-    width: 40%;
-  }
-}
-.price__table th span,
-.price__table td span {
-  color: #e81919;
-  font-weight: inherit;
+  width: 24.0793201133%;
 }
 .price__table th {
   background: #999999;
@@ -501,6 +473,16 @@ body {
 .price__table td {
   background: #ffffff;
   text-align: right;
+}
+.price__table strong {
+  display: block;
+  color: #e81919;
+  font-weight: inherit;
+}
+.price__table span {
+  display: block;
+  font-size: 13px;
+  font-weight: inherit;
 }
 
 .price__note {
