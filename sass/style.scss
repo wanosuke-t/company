@@ -156,23 +156,30 @@ input[type="submit"] {
 }
 
 .header__item {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 3px);
+    height: 2px;
+    background: $color-accent;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &.is-active {
+    &::after {
+      opacity: 1;
+    }
+  }
+
   a {
     display: inline-block;
     color: #ffffff;
-    position: relative;
-
-    &.is-active {
-      &::after {
-        content: "";
-        position: absolute;
-        width: calc(100% - 3px);
-        height: 2px;
-        background: $color-accent;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
   }
 }
 
@@ -194,7 +201,7 @@ input[type="submit"] {
       }
 
       &:nth-child(2) {
-        display: none;
+        opacity: 0;
       }
 
       &:nth-child(3) {
@@ -211,7 +218,7 @@ input[type="submit"] {
   height: 2px;
   background: #ffffff;
   left: 0;
-  transition: all 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 
   &:nth-child(1) {
     top: 0;

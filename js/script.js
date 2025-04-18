@@ -21,9 +21,24 @@ headerIcon.addEventListener("click", function () {
 // ドロワーメニューのリンクをクリックしたときにドロワーを閉じる
 const drawerLinks = document.querySelectorAll('#js-drawer a[href^="#"]');
 
-drawerLinks.forEach(link => {
+drawerLinks.forEach((link) => {
   link.addEventListener("click", function () {
     headerIcon.classList.remove("is-opened");
     drawer.classList.remove("is-opened");
+  });
+});
+
+// .header__itemにホバーされた場合の処理
+const headerItems = document.querySelectorAll(".header__item");
+
+headerItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    // すべての.header__itemから.is-activeを取り除く
+    headerItems.forEach((i) => {
+      i.classList.remove("is-active");
+    });
+
+    // 現在ホバーしている.header__itemに.is-activeを加える
+    item.classList.add("is-active");
   });
 });
